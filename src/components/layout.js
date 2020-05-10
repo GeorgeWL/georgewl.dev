@@ -23,7 +23,6 @@ const Layout = ({ children }) => {
     }
   `)
 	const [theme, setTheme] = useState(Themes.light)
-
 	return (
 		<>
 			<Header
@@ -33,14 +32,20 @@ const Layout = ({ children }) => {
 					setTheme(prev => prev === Themes.light ?
 						Themes.dark :
 						Themes.light)
-				}} />
+					document.body.classList.remove(theme === Themes.light ?
+						Themes.light :
+						Themes.dark)
+					document.body.classList.add(theme === Themes.dark ?
+						Themes.light :
+						Themes.dark)
+				}}
+			/>
 			<div
 				style={{
 					margin: `0 auto`,
 					maxWidth: 960,
 					padding: `0 1.0875rem 1.45rem`,
 				}}
-				className={`layout-${theme}`}
 			>
 				<main>{children}</main>
 				<footer>
