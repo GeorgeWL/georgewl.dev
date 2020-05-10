@@ -2,11 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import ThemeSwitch from "./theme-switch"
-
 const Header = ({ siteTitle, theme, changeTheme }) => (
 	<header
+		className='header'
 		style={{
-			background: `rebeccapurple`,
 			marginBottom: `1.45rem`,
 		}}
 	>
@@ -17,11 +16,11 @@ const Header = ({ siteTitle, theme, changeTheme }) => (
 				padding: `1.45rem 1.0875rem`,
 			}}
 		>
+			<ThemeSwitch theme={theme} onChange={changeTheme} />
 			<h1 style={{ margin: 0 }}>
 				<Link
 					to="/"
 					style={{
-						color: `white`,
 						textDecoration: `none`,
 					}}
 				>
@@ -29,13 +28,12 @@ const Header = ({ siteTitle, theme, changeTheme }) => (
 				</Link>
 			</h1>
 		</nav>
-		<ThemeSwitch theme={theme} onChange={changeTheme} />
 	</header>
 )
 
 Header.propTypes = {
 	siteTitle: PropTypes.string,
-	theme: PropTypes.oneOf(['light', 'dark']).isRequired,
+	theme: PropTypes.oneOf(['light-theme', 'dark-theme']).isRequired,
 	changeTheme: PropTypes.func.isRequired
 }
 
