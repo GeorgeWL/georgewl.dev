@@ -1,15 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Moon from '../assets/moon.svg';
-import Sun from '../assets/sun.svg';
 import './icon.scss';
 function getSvgFromName(name) {
 	switch (name) {
-		case 'sun':
-			return <Sun />
-		case 'moon':
-			return <Moon />
 		default:
+			return 'nope'
 			break;
 	}
 }
