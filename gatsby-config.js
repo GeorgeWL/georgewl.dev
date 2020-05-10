@@ -5,21 +5,14 @@ module.exports = {
 		author: `@georgewl`,
 	},
 	plugins: [
+		`gatsby-transformer-remark`,
 		{
-			resolve: `gatsby-transformer-remark`,
+			resolve: 'gatsby-plugin-react-svg',
 			options: {
-				plugins: [
-					{
-						resolve: `gatsby-remark-images-contentful`,
-						options: {
-							// It's important to specify the maxWidth (in pixels) of
-							// the content container as this plugin uses this as the
-							// base for generating different widths of each image.
-							maxWidth: 590,
-						},
-					},
-				],
-			},
+				rule: {
+					include: /assets/
+				}
+			}
 		},
 		{
 			resolve: `gatsby-plugin-sass`,
