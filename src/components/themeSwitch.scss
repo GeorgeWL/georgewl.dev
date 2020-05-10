@@ -1,0 +1,10 @@
+.themeSwitch {
+	position: sticky;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	height: 50px;
+	right: 0;
+	left: 100%;
+}
