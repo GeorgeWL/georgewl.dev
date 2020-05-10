@@ -1,18 +1,20 @@
-$color-primary: #0060df;
+$color-primary: #243133;
 $color-secondary: #fbfbfe;
 $color-accent: #fd6f53;
+$color-code: hsla(0, 0%, 0%, 0.04);
 $font-color: hsla(0, 0%, 0%, 0.8);
 
 .layout-light-theme {
-	$color-primary: #0060df;
+	$color-primary: #243133;
 	$color-secondary: #fbfbfe;
 	$color-accent: #fd6f53;
 	$font-color: hsla(0, 0%, 0%, 0.8);
 }
 .layout-dark-theme {
-	$color-primary: #17ed90;
+	$color-primary: #fbfbfe;
 	$color-secondary: #243133;
 	$color-accent: #12cdea;
+	$color-code: hsla(0, 0%, 100%, 0.04);
 	$font-color: hsla(0, 0%, 100%, 0.8);
 }
 
@@ -217,7 +219,7 @@ html {
 	box-sizing: inherit;
 }
 body {
-	color: hsla(0, 0%, 0%, 0.8);
+	color: $color-primary;
 	font-family: georgia, serif;
 	font-weight: normal;
 	word-wrap: break-word;
@@ -608,7 +610,7 @@ td:last-child {
 }
 tt,
 code {
-	background-color: hsla(0, 0%, 0%, 0.04);
+	background-color: $color-code;
 	border-radius: 3px;
 	font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", Menlo, Courier,
 		monospace;
