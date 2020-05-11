@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
-	const [theme, setTheme] = useState(Themes.light)
+	const [theme, setTheme] = useState(document.body.classList.contains(Themes.light) ? Themes.light : Themes.dark)
 	return (
 		<>
 			<Header
