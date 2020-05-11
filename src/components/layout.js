@@ -21,14 +21,13 @@ const Layout = ({ children }) => {
       }
     }
   `)
-	const currentTheme = document.body.classList.contains('light-theme') === 'light-theme' ?
-		'light-theme' :
-		'dark-theme'
 	return (
 		<>
 			<Header
 				siteTitle={data.site.siteMetadata.title}
-				theme={currentTheme}
+				theme={document.body.classList.contains('light-theme') === 'light-theme' ?
+					'light-theme' :
+					'dark-theme'}
 				changeTheme={() => {
 					document.body.classList.remove(currentTheme)
 					document.body.classList.add(currentTheme === 'light-theme' ?
