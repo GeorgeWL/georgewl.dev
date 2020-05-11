@@ -7,11 +7,10 @@
 
 import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React from "react"
 import Header from "./header"
 import "./layout.scss"
 
-const Themes = { light: 'light-theme', dark: 'dark-theme' }
 const Layout = ({ children }) => {
 	const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -22,22 +21,19 @@ const Layout = ({ children }) => {
       }
     }
   `)
-	const [theme, setTheme] = useState(document.body.classList.contains(Themes.light) ? Themes.light : Themes.dark)
+	const currentTheme = document.body.classList.contains('light-theme') === 'light-theme' ?
+		'light-theme' :
+		'dark-theme'
 	return (
 		<>
 			<Header
 				siteTitle={data.site.siteMetadata.title}
-				theme={theme}
+				theme={currentTheme}
 				changeTheme={() => {
-					setTheme(prev => prev === Themes.light ?
-						Themes.dark :
-						Themes.light)
-					document.body.classList.remove(theme === Themes.light ?
-						Themes.light :
-						Themes.dark)
-					document.body.classList.add(theme === Themes.dark ?
-						Themes.light :
-						Themes.dark)
+					document.body.classList.remove(currentTheme)
+					document.body.classList.add(currentTheme === 'light-theme' ?
+						'dark-theme' :
+						'light-theme')
 				}}
 			/>
 			<div
