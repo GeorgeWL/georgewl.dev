@@ -25,14 +25,16 @@ const Layout = ({ children }) => {
 		<>
 			<Header
 				siteTitle={data.site.siteMetadata.title}
-				theme={document.body.classList.contains('light-theme') === 'light-theme' ?
+				theme={document && document.body && document.body.classList.contains('light-theme') === 'light-theme' ?
 					'light-theme' :
 					'dark-theme'}
 				changeTheme={() => {
-					document.body.classList.remove(currentTheme)
-					document.body.classList.add(currentTheme === 'light-theme' ?
-						'dark-theme' :
-						'light-theme')
+					if (document && document.body) {
+						document.body.classList.remove(currentTheme)
+						document.body.classList.add(currentTheme === 'light-theme' ?
+							'dark-theme' :
+							'light-theme')
+					}
 				}}
 			/>
 			<div
