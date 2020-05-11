@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bf773f9d-c69a-4764-8634-0daa38dc661c/deploy-status)](https://app.netlify.com/sites/georgewl/deploys)
+
 # Prist | A Gatsby & Prismic Starter
 
 A light-themed starter powered by [Gatsby v2](https://www.gatsbyjs.org) and [Prismic](https://prismic.io/) to showcase portfolios and blogs.
@@ -292,4 +294,3 @@ In the right panel, select *JSON editor* and paste the following:
   }
 }
 ```
-
